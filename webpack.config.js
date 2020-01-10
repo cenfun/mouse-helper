@@ -10,17 +10,12 @@ module.exports = {
     module: {
         rules: [{
             test: /\.css$/,
-            use: [{
-                loader: "style-loader",
+            use: {
+                loader: "raw-loader",
                 options: {
-                    injectType: 'singletonStyleTag',
-                    attributes: {
-                        component: "mouse-helper"
-                    }
+                    esModule: false
                 }
-            }, {
-                loader: "css-loader"
-            }]
+            }
         }]
     }
-}
+};

@@ -1,4 +1,3 @@
-require("./style.css");
 module.exports = function() {
     if (!document.body) {
         console.log("Failed to create mouse helper, document.body not ready");
@@ -6,6 +5,12 @@ module.exports = function() {
     }
     var box = document.querySelector('.mouse-helper');
     if (!box) {
+        var css = require("./style.css");
+        var style = document.createElement("style");
+        style.setAttribute("type", "text/css");
+        style.setAttribute("context", "mouse-helper");
+        style.innerHTML = css;
+        document.head.appendChild(style);
         box = document.createElement('div');
         box.className = 'mouse-helper';
         document.body.appendChild(box);
