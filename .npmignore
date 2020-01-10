@@ -1,5 +1,7 @@
 node_modules
 src
+.eslintrc.js
+.jsbeautifyrc
 package-lock.json
 mouse-helper.html
 webpack.config.js
