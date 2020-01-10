@@ -1,2 +1,5 @@
-# puppeteer-mouse-helper
-puppeteer-mouse-helper
+# mouse-helper
+
+```sh
+npm i mouse-helper
+```
