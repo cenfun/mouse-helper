@@ -1,24 +1,25 @@
 {
     "name": "mouse-helper",
     "version": "1.0.5",
-    "description": "",
+    "description": "A tool to show mouse position and status for screenshots in automation test such as Puppeteer or Playwright",
     "main": "dist/mouse-helper.js",
+    "files": [
+        "dist"
+    ],
     "scripts": {
-        "build": "npx webpack"
+        "build": "sf lint && sf b -m",
+        "patch": "npm run build && sf publish patch",
+        "pack": "sf lint && sf pack -m -p docs -q v={version} && node ./scripts"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/cenfun/mouse-helper.git"
     },
-    "author": "",
-    "license": "",
-    "bugs": {
-        "url": "https://github.com/cenfun/mouse-helper/issues"
-    },
-    "homepage": "https://github.com/cenfun/mouse-helper#readme",
     "devDependencies": {
-        "raw-loader": "^4.0.0",
-        "webpack": "^4.41.5",
-        "webpack-cli": "^3.3.10"
+        "eight-colors": "^1.0.1",
+        "eslint": "^8.21.0",
+        "eslint-config-plus": "^1.0.3",
+        "eslint-plugin-html": "^7.1.0",
+        "puppeteer-chromium-resolver": "^16.0.0"
     }
 }
