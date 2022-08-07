@@ -23,7 +23,7 @@ require("mouse-helper")();
 see [/public/index.html](/public/index.html)
 
 ## Screenshots
-screenshot mouse move(300, 50)  
+screenshot mouse move(20, 50)  
 ![](/docs/screenshot-move.png)  
 
 screenshot mouse down  

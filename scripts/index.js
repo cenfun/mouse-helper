@@ -54,7 +54,7 @@ const start = async () => {
     await launchBrowser();
     const page = await browser.newPage();
     await page.setViewport({
-        width: 600,
+        width: 350,
         height: 100
     });
     const url = path.resolve(__dirname, '../public/index.html');
@@ -72,7 +72,7 @@ const start = async () => {
 
     delay(500);
 
-    await page.mouse.move(300, 50);
+    await page.mouse.move(20, 50);
     const screenshotMovePath = path.resolve(__dirname, '../docs/screenshot-move.png');
     await page.screenshot({
         path: screenshotMovePath
