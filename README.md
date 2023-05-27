@@ -1,5 +1,11 @@
 # Mouse Helper
-> A tool to show mouse position and status for screenshots in automation test such as [Puppeteer](https://github.com/puppeteer/puppeteer) or [Playwright](https://github.com/microsoft/playwright)
+
+[![](https://img.shields.io/npm/v/mouse-helper)](https://www.npmjs.com/package/mouse-helper)
+![](https://img.shields.io/librariesio/dependents/npm/mouse-helper)
+[![](https://badgen.net/npm/dw/mouse-helper)](https://www.npmjs.com/package/mouse-helper)
+![](https://img.shields.io/github/license/cenfun/mouse-helper)
+
+A tool to show mouse position and status for screenshots in automation test such as [Puppeteer](https://github.com/puppeteer/puppeteer) or [Playwright](https://github.com/microsoft/playwright)
 
 ## Install
 ```sh
