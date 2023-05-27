@@ -1,26 +1,27 @@
-
-const mouseNormal = require('./images/mouse-normal.svg');
-const mouseDown = require('./images/mouse-down.svg');
-
-//console.log(mouseNormal, mouseDown);
-
-const defaultOption = {
-    top: '0',
-    left: '0',
-    opacity: 0.8,
-    className: 'mouse-helper-container'
-};
-
-module.exports = function(option) {
+const mouseHelper = function(option) {
     if (!document.body) {
         console.log('Failed to create mouse helper, document.body not ready');
         return false;
     }
+
+    // console.log(mouseNormal, mouseDown);
+
+    const defaultOption = {
+        top: '0',
+        left: '0',
+        opacity: 0.8,
+        className: 'mouse-helper-container'
+    };
+
     const o = Object.assign(defaultOption, option);
     let container = document.querySelector(`.${o.className}`);
     if (container) {
         return true;
     }
+
+    const mouseNormal = require('./images/mouse-normal.svg');
+    const mouseDown = require('./images/mouse-down.svg');
+
     container = document.createElement('div');
     container.className = o.className;
     container.style.cssText = `top: ${o.top}; left: ${o.left}; opacity: ${o.opacity}; position: absolute; z-index: 99999; user-select: none; pointer-events: none;`;
@@ -39,23 +40,24 @@ module.exports = function(option) {
 
     let firstMoved;
     let requestId;
-    document.addEventListener('mousemove', function(e) {
+    const update = function(e) {
 
         if (!firstMoved) {
             firstMoved = true;
             imageNormal.style.display = 'block';
         }
 
-        //throttle
-        //console.log(requestId);
+        // throttle
+        // console.log(requestId);
         window.cancelAnimationFrame(requestId);
         requestId = window.requestAnimationFrame(() => {
-            //console.log(requestId, '-');
+            // console.log(requestId, '-');
             container.style.left = `${e.pageX}px`;
             container.style.top = `${e.pageY}px`;
         });
-    });
+    };
 
+    document.addEventListener('mousemove', update);
     document.addEventListener('mousedown', function() {
         imageDown.style.display = 'block';
     });
@@ -65,3 +67,5 @@ module.exports = function(option) {
 
     return true;
 };
+
+module.exports = mouseHelper;
