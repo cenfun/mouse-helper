@@ -1,6 +1,6 @@
 {
     "name": "mouse-helper",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "description": "A tool to show mouse position and status for screenshots in automation test such as Puppeteer or Playwright",
     "main": "dist/mouse-helper.js",
     "scripts": {
