@@ -19,7 +19,7 @@ const start = async () => {
 
     console.log('mock page ...');
     await page.setContent(`<html>
-    <body>
+    <body style="background:#f8f8f8;">
     <div>Mouse Helper (move or click your mouse)</div>
     </body>
     </html>`);
